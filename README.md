@@ -1,64 +1,160 @@
-# FRAMELAB Site
+# FrameLab
 
-Marketing site and demo app for FRAMELAB, a design-first language that compiles `.fl` files into React components.
+FrameLab is a design-first language where design systems become executable and compile into production UI.
 
-This repo contains a Vite + React + TypeScript single-page site that explains the FRAMELAB pitch, shows a live compiled component example, and includes a lightweight reactive runtime prototype in [`src/runtime/signals.ts`](/Users/tars/Desktop/Framelab_0.1/framelab-demo/src/runtime/signals.ts).
+Instead of handing off static screens, designers define interface structure, layout primitives, states, motion, and interaction intent using a declarative language.
 
-## What it includes
+FrameLab compiles those definitions into production UI components.
 
-- Landing page sections for the problem, solution, design-system constraints, AI guardrails, compiler pipeline, and feature highlights
-- A demo `HelloCard` component presented as live compiled output from `example.fl`
-- Custom styling via token and component CSS files
-- A small zero-dependency signals runtime prototype for FRAMELAB-style reactivity experiments
+`Design intent -> FrameLab -> Production UI`
 
-## Tech stack
+# Why FrameLab Exists
 
-- React 19
+Today product teams work across two disconnected layers:
+
+Design tools define visual systems.  
+Engineering frameworks implement UI architecture.
+
+This creates a gap between design intent and shipped code.
+
+Designers produce artifacts.  
+Engineers reinterpret them into code.
+
+FrameLab explores a different model.
+
+Design systems should be executable.
+
+Instead of handing off screens, designers define interface architecture in a language that compiles into UI.
+
+# What FrameLab Enables
+
+FrameLab introduces a new layer between design and engineering.
+
+Design  
+↓  
+FrameLab (design architecture)  
+↓  
+Production UI
+
+Designers define:
+
+- layout primitives
+- component structure
+- interaction states
+- motion rules
+- design tokens
+- UI constraints
+
+FrameLab then compiles those rules into real UI components.
+
+# Example Concept
+
+A FrameLab component might describe interface structure like this:
+
+```text
+surface
+stack
+slot
+state hover
+motion shift
+intent trigger
+```
+
+These declarations define UI architecture that compiles into framework components.
+
+# What This Repository Contains
+
+This repository contains a marketing site and prototype demo for FrameLab.
+
+Included in this project:
+
+- A Vite + React + TypeScript demo site explaining the FrameLab concept
+- A sample compiled component example
+- A lightweight reactive runtime prototype
+- A demonstration of design-first UI architecture
+
+# Tech Stack
+
+- React
 - TypeScript
 - Vite
 - ESLint
 
-## Getting started
+# Getting Started
 
-### Install dependencies
+Install dependencies
 
 ```bash
 npm install
 ```
 
-### Start the dev server
+Start the development server
 
 ```bash
 npm run dev
 ```
 
-### Build for production
+Build for production
 
 ```bash
 npm run build
 ```
 
-### Preview the production build
+Preview the production build
 
 ```bash
 npm run preview
 ```
 
-## Project structure
+# Project Structure
 
-- [`src/App.tsx`](/Users/tars/Desktop/Framelab_0.1/framelab-demo/src/App.tsx): main landing page and demo sections
-- [`src/HelloCard.tsx`](/Users/tars/Desktop/Framelab_0.1/framelab-demo/src/HelloCard.tsx): sample compiled component shown in the hero and compiler demo
-- [`src/runtime/signals.ts`](/Users/tars/Desktop/Framelab_0.1/framelab-demo/src/runtime/signals.ts): minimal reactive runtime primitives
-- [`src/tokens.css`](/Users/tars/Desktop/Framelab_0.1/framelab-demo/src/tokens.css): shared design tokens
-- [`src/App.css`](/Users/tars/Desktop/Framelab_0.1/framelab-demo/src/App.css): page-specific styling
+[`src/App.tsx`](/Users/tars/Desktop/Framelab_0.1/framelab-demo/src/App.tsx)  
+Main landing page and concept explanation
 
-## Scripts
+[`src/HelloCard.tsx`](/Users/tars/Desktop/Framelab_0.1/framelab-demo/src/HelloCard.tsx)  
+Example compiled component used in the demo
 
-- `npm run dev`: start the Vite dev server
-- `npm run build`: type-check and create a production build
-- `npm run lint`: run ESLint
-- `npm run preview`: preview the built app locally
+[`src/runtime/signals.ts`](/Users/tars/Desktop/Framelab_0.1/framelab-demo/src/runtime/signals.ts)  
+Minimal reactive runtime primitives
 
-## Repository
+[`src/tokens.css`](/Users/tars/Desktop/Framelab_0.1/framelab-demo/src/tokens.css)  
+Shared design tokens
 
-GitHub remote: [FVDEDFOREVR/Framelab-Site](https://github.com/FVDEDFOREVR/Framelab-Site)
+[`src/App.css`](/Users/tars/Desktop/Framelab_0.1/framelab-demo/src/App.css)  
+Page styling
+
+# Creator
+
+FrameLab was created by Daniel (GitHub: FVDEDFOREVR).
+
+FrameLab explores a new approach to design systems where interface architecture can be defined declaratively and compiled into production UI.
+
+This repository represents the early prototype and research exploration of executable design systems.
+
+# Project Origin
+
+FrameLab began as an exploration of how design systems could move beyond documentation and become executable.
+
+Today designers create visual systems while engineers recreate those systems in code.
+
+FrameLab proposes a different approach:
+
+Design systems themselves should be executable.
+
+Instead of handing off static screens, designers define interface structure, layout rules, and behavior as a language that compiles into production UI.
+
+# Vision
+
+FrameLab explores a future where design systems are the source of truth for interface architecture.
+
+In this model:
+
+`Design intent -> FrameLab -> Production UI`
+
+AI systems could generate FrameLab components, while designers maintain control of the system architecture.
+
+# License
+
+FrameLab is open source under the Apache License 2.0.
+
+See the LICENSE file for details.
