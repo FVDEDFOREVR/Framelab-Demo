@@ -108,19 +108,19 @@ npm run preview
 
 # Project Structure
 
-[`src/App.tsx`](/Users/tars/Desktop/Framelab_0.1/framelab-demo/src/App.tsx)  
+[`src/App.tsx`](src/App.tsx)  
 Main landing page and concept explanation
 
-[`src/HelloCard.tsx`](/Users/tars/Desktop/Framelab_0.1/framelab-demo/src/HelloCard.tsx)  
+[`src/HelloCard.tsx`](src/HelloCard.tsx)  
 Example compiled component used in the demo
 
-[`src/runtime/signals.ts`](/Users/tars/Desktop/Framelab_0.1/framelab-demo/src/runtime/signals.ts)  
+[`src/runtime/signals.ts`](src/runtime/signals.ts)  
 Minimal reactive runtime primitives
 
-[`src/tokens.css`](/Users/tars/Desktop/Framelab_0.1/framelab-demo/src/tokens.css)  
+[`src/tokens.css`](src/tokens.css)  
 Shared design tokens
 
-[`src/App.css`](/Users/tars/Desktop/Framelab_0.1/framelab-demo/src/App.css)  
+[`src/App.css`](src/App.css)  
 Page styling
 
 # Creator
