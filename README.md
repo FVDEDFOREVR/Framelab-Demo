@@ -73,7 +73,7 @@ This repository contains a marketing site and prototype demo for FrameLab.
 Included in this project:
 
 - A Vite + React + TypeScript demo site explaining the FrameLab concept
-- A sample compiled component example
+- A local FrameLab dogfood flow that generates demo components from `.fl` source
 - A lightweight reactive runtime prototype
 - A demonstration of design-first UI architecture
 
@@ -104,6 +104,12 @@ Build for production
 npm run build
 ```
 
+Regenerate only the FrameLab-driven demo components
+
+```bash
+npm run framelab:build
+```
+
 Preview the production build
 
 ```bash
@@ -115,17 +121,20 @@ npm run preview
 [`src/App.tsx`](src/App.tsx)  
 Main landing page and concept explanation
 
-[`src/HelloCard.tsx`](src/HelloCard.tsx)  
-Example compiled component used in the demo
+[`src/framelab/demo.fl`](src/framelab/demo.fl)  
+FrameLab source used to generate the demo components
+
+[`src/generated/`](src/generated/)  
+Compiler output consumed by the demo app
 
 [`src/runtime/signals.ts`](src/runtime/signals.ts)  
 Minimal reactive runtime primitives
 
-[`src/tokens.css`](src/tokens.css)  
-Shared design tokens
-
 [`src/App.css`](src/App.css)  
 Page styling
+
+[`docs/framelab-dogfood-notes.md`](docs/framelab-dogfood-notes.md)  
+Dogfooding workflow notes and current limitations
 
 # Creator
 

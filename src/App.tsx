@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react'
-import HelloCard from './HelloCard'
-import './tokens.css'
+import Button from './generated/Button'
+import ProductCard from './generated/ProductCard'
+import Input from './generated/Input'
+import NavItem from './generated/NavItem'
+import Toast from './generated/Toast'
 import './App.css'
 
 // ── Animated counter ─────────────────────────────────────────────────────────
@@ -104,6 +107,7 @@ function Feature({ icon, title, body }: { icon: string; title: string; body: str
 // ── App ───────────────────────────────────────────────────────────────────────
 export default function App() {
   const [tab, setTab] = useState<'framelab'|'react'|'css'>('framelab')
+  const [lastIntent, setLastIntent] = useState<string | null>(null)
 
   const framelabCode = `component AddToCart(product: Product) {
   surface {
@@ -200,10 +204,105 @@ export default function App() {
           </Reveal>
           <Reveal delay={320} className="hero-component-wrap">
             <div className="hero-component-label">
-              <span className="live-dot" /> Live — compiled from <code>example.fl</code>
+              <span className="live-dot" /> Live — emitted from <code>src/framelab/demo.fl</code>
             </div>
             <div className="hero-stage">
-              <HelloCard />
+              <ProductCard
+                titleText="Oak Frame Chair"
+                categoryText="Living room"
+                priceText="$248"
+                href="#product-card"
+                slots={{
+                  thumbnail: <div className="demo-thumbnail" />,
+                  actions: <span className="demo-pill">Ships in 2 days</span>,
+                }}
+              />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section section-dogfood" id="dogfood">
+        <div className="container">
+          <Reveal>
+            <div className="section-eyebrow">Compiler dogfood</div>
+            <h2 className="section-title">Five real demo components now ship from <code>demo.fl</code>.</h2>
+            <p className="section-sub">
+              The demo now builds Button, ProductCard, Input, NavItem, and Toast through the compiler CLI.
+              Motion still warns for Toast, and the emitted subset stays explicit rather than hiding unsupported behavior.
+            </p>
+          </Reveal>
+
+          <Reveal delay={100}>
+            <div className="dogfood-nav">
+              <NavItem
+                labelText="Overview"
+                href="#solution"
+                slots={{ icon: <span className="demo-nav-icon" /> }}
+              />
+              <NavItem
+                emphasis="current"
+                labelText="Compiler"
+                href="#pipeline"
+                slots={{ icon: <span className="demo-nav-icon demo-nav-icon-active" />, badge: <span className="demo-nav-badge">Live</span> }}
+              />
+              <NavItem
+                emphasis="suppressed"
+                labelText="Warnings"
+                href="#dogfood"
+                slots={{ icon: <span className="demo-nav-icon" />, badge: <span className="demo-nav-badge demo-nav-badge-muted">1</span> }}
+              />
+            </div>
+          </Reveal>
+
+          <Reveal delay={180}>
+            <div className="dogfood-grid">
+              <ProductCard
+                titleText="FrameLab Compiler Tee"
+                categoryText="Demo merchandise"
+                priceText="$32"
+                href="#product-demo"
+                slots={{
+                  thumbnail: <div className="demo-thumbnail demo-thumbnail-shirt" />,
+                  actions: <span className="demo-pill">Built from slots</span>,
+                }}
+              />
+
+              <div className="dogfood-column">
+                <Input
+                  tone="danger"
+                  labelText="Email address"
+                  valueText="compiler@framelab.dev"
+                  hintText="Current emitter renders a presentational field, not a native input control."
+                />
+
+                <div className="dogfood-actions">
+                  <Button
+                    labelText="Run compiler"
+                    onIntent={setLastIntent}
+                  />
+                  <Button
+                    tone="ghost"
+                    labelText="Preview output"
+                    onIntent={setLastIntent}
+                  />
+                </div>
+
+                <Toast
+                  tone="warning"
+                  messageText="Toast motion still emits a warning in the current React subset."
+                  onIntent={setLastIntent}
+                  slots={{
+                    icon: <span className="demo-toast-icon" />,
+                    action: <span className="demo-toast-action">Dismiss</span>,
+                  }}
+                />
+
+                <div className="dogfood-log">
+                  <span className="dogfood-log-label">Last emitted intent</span>
+                  <code>{lastIntent ?? 'none yet'}</code>
+                </div>
+              </div>
             </div>
           </Reveal>
         </div>
@@ -482,12 +581,12 @@ export default function App() {
 
           <Reveal delay={100}>
             <div className="pipeline-steps">
-              {[
-                { n:'1', label:'example.fl',     sub:'You write this',                  active:true  },
+                {[
+                { n:'1', label:'demo.fl',            sub:'Five demo components',             active:true  },
                 { n:'2', label:'tokenize()',         sub:'120 tokens, source locations'              },
                 { n:'3', label:'parse()',            sub:'ComponentDecl AST'                         },
                 { n:'4', label:'lint()',             sub:'Constraint rules checked'                  },
-                { n:'5', label:'emit()',             sub:'HelloCard.tsx + .module.css', active:true  },
+                { n:'5', label:'emit()',             sub:'React artifacts in src/generated', active:true  },
               ].map((s, i) => (
                 <div key={i} className="ps-wrap">
                   <div className={`ps-step ${s.active ? 'ps-step-active' : ''}`}>
@@ -507,10 +606,17 @@ export default function App() {
             <div className="live-output">
               <div className="live-output-label">
                 <span className="live-dot" />
-                Live compiled output — <code>HelloCard</code> from <code>example.fl</code>
+                Live compiled output — generated components from <code>demo.fl</code>
               </div>
               <div className="live-stage">
-                <HelloCard />
+                <div className="live-stage-stack">
+                  <Button labelText="Compiler ready" tone="danger" onIntent={setLastIntent} />
+                  <Toast
+                    messageText="Dogfood build completed through the CLI."
+                    slots={{ icon: <span className="demo-toast-icon demo-toast-icon-success" /> }}
+                    onIntent={setLastIntent}
+                  />
+                </div>
               </div>
             </div>
           </Reveal>
@@ -550,10 +656,10 @@ export default function App() {
           <Reveal>
             <div className="stats-grid">
               {[
-                { n: 120, label: 'tokens produced',   sub: 'from example.fl' },
+                { n: 45,  label: 'tokens produced',    sub: 'from demo.fl' },
                 { n: 38,  label: 'assertions passed',  sub: 'full pipeline test' },
-                { n: 2,   label: 'files emitted',      sub: '.tsx + .module.css' },
-                { n: 0,   label: 'errors',              sub: 'clean compile' },
+                { n: 11,  label: 'files emitted',      sub: '5 components + CSS' },
+                { n: 1,   label: 'warnings',           sub: 'toast motion unsupported' },
               ].map(s => (
                 <div key={s.label} className="stat">
                   <div className="stat-number"><Counter to={s.n} /></div>

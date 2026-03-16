@@ -41,6 +41,13 @@ code {
 }
 
 a { color: inherit; text-decoration: none; }
+button {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
 
 .page { min-height: 100vh; }
 
@@ -221,6 +228,10 @@ a { color: inherit; text-decoration: none; }
   justify-content: center;
 }
 
+.hero-stage > * {
+  width: 100%;
+}
+
 /* ── FRAMELAB compiled surface/stack/text ────────────────────── */
 .surface {
   background: var(--bg-3);
@@ -240,6 +251,107 @@ a { color: inherit; text-decoration: none; }
 
 .hero-stage .surface { padding: 24px 28px; max-width: 320px; }
 .hero-stage .stack-vertical { gap: 10px; }
+
+.section-dogfood { padding-top: 0; }
+
+.dogfood-nav {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.dogfood-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.dogfood-column {
+  display: grid;
+  gap: 16px;
+}
+
+.dogfood-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.dogfood-log {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+}
+
+.dogfood-log-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.demo-thumbnail {
+  min-height: 180px;
+  border-radius: 14px;
+  background:
+    linear-gradient(135deg, rgba(74,124,255,0.28), rgba(110,153,255,0.06)),
+    linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.demo-thumbnail-shirt {
+  min-height: 220px;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255,255,255,0.14), transparent 28%),
+    linear-gradient(145deg, rgba(74,124,255,0.2), rgba(255,255,255,0.03)),
+    linear-gradient(180deg, rgba(255,255,255,0.05), rgba(0,0,0,0.18));
+}
+
+.demo-pill,
+.demo-nav-badge,
+.demo-toast-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 28px;
+  padding: 0 10px;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--text-1);
+}
+
+.demo-nav-badge-muted {
+  color: var(--text-2);
+}
+
+.demo-nav-icon,
+.demo-toast-icon {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--accent);
+  display: inline-block;
+}
+
+.demo-nav-icon-active,
+.demo-toast-icon-success {
+  background: var(--green);
+}
+
+.demo-toast-icon {
+  width: 12px;
+  height: 12px;
+  background: var(--yellow);
+}
 
 /* ── Section shared ───────────────────────────────────────── */
 .section { padding: 96px 0; }
@@ -623,6 +735,12 @@ a { color: inherit; text-decoration: none; }
   max-width: 420px;
 }
 
+.live-stage-stack {
+  width: 100%;
+  display: grid;
+  gap: 16px;
+}
+
 /* ── Features section ─────────────────────────────────────── */
 .section-features { background: var(--bg-2); }
 .features-grid {
@@ -706,4 +824,13 @@ a { color: inherit; text-decoration: none; }
   .live-dot { animation: none; }
   .surface  { transition: none; }
   .btn-primary, .btn-ghost { transition: none; }
+}
+
+@media (max-width: 860px) {
+  .dogfood-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 720px) {
+  .dogfood-nav { grid-template-columns: 1fr; }
+  .dogfood-actions { flex-direction: column; }
 }

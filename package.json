@@ -4,8 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "framelab:build": "node ./scripts/build-framelab.mjs",
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "npm run framelab:build && tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
