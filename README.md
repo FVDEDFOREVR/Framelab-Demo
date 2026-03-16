@@ -6,11 +6,11 @@ FrameLab is an experimental design language exploring executable design systems 
 
 Created by Daniel Hairston.
 
+`Design intent -> FrameLab -> Production UI`
+
 Instead of handing off static screens, designers define interface structure, layout primitives, states, motion, and interaction intent using a declarative language.
 
 FrameLab compiles those definitions into production UI components.
-
-`Design intent -> FrameLab -> Production UI`
 
 # Why FrameLab Exists
 
@@ -112,19 +112,19 @@ npm run preview
 
 # Project Structure
 
-[`src/App.tsx`](/Users/tars/Desktop/Framelab_0.1/framelab-demo/src/App.tsx)  
+[`src/App.tsx`](src/App.tsx)  
 Main landing page and concept explanation
 
-[`src/HelloCard.tsx`](/Users/tars/Desktop/Framelab_0.1/framelab-demo/src/HelloCard.tsx)  
+[`src/HelloCard.tsx`](src/HelloCard.tsx)  
 Example compiled component used in the demo
 
-[`src/runtime/signals.ts`](/Users/tars/Desktop/Framelab_0.1/framelab-demo/src/runtime/signals.ts)  
+[`src/runtime/signals.ts`](src/runtime/signals.ts)  
 Minimal reactive runtime primitives
 
-[`src/tokens.css`](/Users/tars/Desktop/Framelab_0.1/framelab-demo/src/tokens.css)  
+[`src/tokens.css`](src/tokens.css)  
 Shared design tokens
 
-[`src/App.css`](/Users/tars/Desktop/Framelab_0.1/framelab-demo/src/App.css)  
+[`src/App.css`](src/App.css)  
 Page styling
 
 # Creator
@@ -161,4 +161,4 @@ AI systems could generate FrameLab components, while designers maintain control 
 
 FrameLab is open source under the Apache License 2.0.
 
-See the LICENSE file for details.
+See the [LICENSE](LICENSE) file for details.
