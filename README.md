@@ -2,11 +2,11 @@
 
 FrameLab is a design-first language where design systems become executable and compile into production UI.
 
+`Design intent -> FrameLab -> Production UI`
+
 Instead of handing off static screens, designers define interface structure, layout primitives, states, motion, and interaction intent using a declarative language.
 
 FrameLab compiles those definitions into production UI components.
-
-`Design intent -> FrameLab -> Production UI`
 
 # Why Framelab Exists
 
