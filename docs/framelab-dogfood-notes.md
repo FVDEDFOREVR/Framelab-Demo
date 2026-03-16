@@ -12,7 +12,8 @@ The source of truth is `src/framelab/demo.fl`. Generated artifacts are written t
 
 ## Build Flow
 
-- `npm run framelab:build` rebuilds the local compiler, compiles `demo.fl`, and refreshes `src/generated`
+- `npm run framelab:build` rebuilds the local compiler, compiles `demo.fl`, and refreshes `src/generated` when a sibling `../framelab-compiler` checkout is available
+- In CI or deploy environments without that sibling compiler repo, `npm run framelab:build` intentionally falls back to the committed `src/generated` artifacts instead of trying to regenerate them
 - `npm run build` runs `framelab:build` first, then runs the normal TypeScript and Vite production build
 
 ## Observed Limitations

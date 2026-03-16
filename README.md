@@ -110,6 +110,12 @@ Regenerate only the FrameLab-driven demo components
 npm run framelab:build
 ```
 
+Deployment note
+
+- Local dogfooding expects a sibling `../framelab-compiler` checkout and regenerates `src/generated`
+- CI/deploy environments without that sibling repo use the committed `src/generated` artifacts as-is
+- If generated output changes, rerun `npm run framelab:build` locally and commit the refreshed files
+
 Preview the production build
 
 ```bash
