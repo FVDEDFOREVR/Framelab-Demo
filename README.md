@@ -8,7 +8,7 @@ FrameLab compiles those definitions into production UI components.
 
 `Design intent -> FrameLab -> Production UI`
 
-# Why FrameLab Exists
+# Why Framelab Exists
 
 Today product teams work across two disconnected layers:
 
@@ -20,19 +20,19 @@ This creates a gap between design intent and shipped code.
 Designers produce artifacts.  
 Engineers reinterpret them into code.
 
-FrameLab explores a different model.
+Framelab explores a different model.
 
 Design systems should be executable.
 
 Instead of handing off screens, designers define interface architecture in a language that compiles into UI.
 
-# What FrameLab Enables
+# What Framelab Enables
 
-FrameLab introduces a new layer between design and engineering.
+Framelab introduces a new layer between design and engineering.
 
 Design  
 ↓  
-FrameLab (design architecture)  
+Framelab (design architecture)  
 ↓  
 Production UI
 
@@ -45,11 +45,11 @@ Designers define:
 - design tokens
 - UI constraints
 
-FrameLab then compiles those rules into real UI components.
+Framelab then compiles those rules into real UI components.
 
 # Example Concept
 
-A FrameLab component might describe interface structure like this:
+A Framelab component might describe interface structure like this:
 
 ```text
 surface
@@ -64,11 +64,11 @@ These declarations define UI architecture that compiles into framework component
 
 # What This Repository Contains
 
-This repository contains a marketing site and prototype demo for FrameLab.
+This repository contains a marketing site and prototype demo for Framelab.
 
 Included in this project:
 
-- A Vite + React + TypeScript demo site explaining the FrameLab concept
+- A Vite + React + TypeScript demo site explaining the Framelab concept
 - A sample compiled component example
 - A lightweight reactive runtime prototype
 - A demonstration of design-first UI architecture
@@ -125,19 +125,19 @@ Page styling
 
 # Creator
 
-FrameLab was created by Daniel (GitHub: FVDEDFOREVR).
+Framelab was created by Daniel (GitHub: FVDEDFOREVR).
 
-FrameLab explores a new approach to design systems where interface architecture can be defined declaratively and compiled into production UI.
+Framelab explores a new approach to design systems where interface architecture can be defined declaratively and compiled into production UI.
 
 This repository represents the early prototype and research exploration of executable design systems.
 
 # Project Origin
 
-FrameLab began as an exploration of how design systems could move beyond documentation and become executable.
+Framelab began as an exploration of how design systems could move beyond documentation and become executable.
 
 Today designers create visual systems while engineers recreate those systems in code.
 
-FrameLab proposes a different approach:
+Framelab proposes a different approach:
 
 Design systems themselves should be executable.
 
@@ -145,16 +145,16 @@ Instead of handing off static screens, designers define interface structure, lay
 
 # Vision
 
-FrameLab explores a future where design systems are the source of truth for interface architecture.
+Framelab explores a future where design systems are the source of truth for interface architecture.
 
 In this model:
 
 `Design intent -> FrameLab -> Production UI`
 
-AI systems could generate FrameLab components, while designers maintain control of the system architecture.
+AI systems could generate Framelab components, while designers maintain control of the system architecture.
 
 # License
 
-FrameLab is open source under the Apache License 2.0.
+Framelab is open source under the Apache License 2.0.
 
 See the LICENSE file for details.
