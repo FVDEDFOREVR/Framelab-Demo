@@ -1,4 +1,4 @@
-# FrameLab
+# Framelab
 
 FrameLab is a design-first language where design systems become executable and compile into production UI.
 
