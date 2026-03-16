@@ -2,6 +2,10 @@
 
 FrameLab is a design-first language where design systems become executable and compile into production UI.
 
+FrameLab is an experimental design language exploring executable design systems and UI architecture.
+
+Created by Daniel Hairston.
+
 Instead of handing off static screens, designers define interface structure, layout primitives, states, motion, and interaction intent using a declarative language.
 
 FrameLab compiles those definitions into production UI components.
